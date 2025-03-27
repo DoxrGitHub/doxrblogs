@@ -1,0 +1,40 @@
+baseURL = "/"
+theme = "hugo-blog-awesome"
+
+[params]
+    description = "Beautiful, exquisite writing by an intelligent adonis."
+    showDarkMode = true
+    [params.author]
+        name = "doxr"
+    
+[markup]
+  [markup.highlight]
+    style = "monokai"
+
+[menu]
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Blog"
+  url = "/posts/"
+  weight = 2
+
+[Languages]
+  [Languages.en]
+  title = "Doxr's Blog"
+    languageCode = "en"
+    defaultContentLanguage = "en"
+
+    [Languages.en.params]
+      description = "Beautiful, exquisite writing by an intelligent adonis."
+      defaultColor = "dark"
+      dateFormat = "2 Jan 2006"
+      rssFeedDescription = "summary"
+
+      [Languages.en.params.author]
+        intro = "Doxr's Blog"
+        name = "doxr"
+        description = "Beautiful, exquisite writing by an intelligent adonis."
