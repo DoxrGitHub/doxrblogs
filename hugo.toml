@@ -6,10 +6,13 @@ theme = "hugo-blog-awesome"
     showDarkMode = true
     [params.author]
         name = "doxr"
-    
+
 [markup]
   [markup.highlight]
     style = "monokai"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [menu]
 [[menu.main]]
