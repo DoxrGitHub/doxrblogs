@@ -128,7 +128,7 @@ I found that you can replay the request to like a post and recommend a comment o
 Here's the video PoC/demonstration:
 
 <video width="800" controls>
-  <source src="{{< relURL "snosites.webm" >}}" type="video/webm">
+  <source src="../../snosites.webm" type="video/webm">
   Your browser does not support this video.
 </video>
 
