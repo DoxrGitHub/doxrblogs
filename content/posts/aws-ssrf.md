@@ -228,7 +228,7 @@ The only thing this useless thing had access to was CloudWatch Logs, which also 
 
 Apparently, Zonos doesn't have a Responsible Disclosure program or even a security contact, so I decided to just email the support team and see if they'll take the report. I didn't think that it was a great idea if I didn't contact them so I did.
 
-The support team directed me to the head of their IT, where I gave him bug details in an encrypted textbox (it's the first time I've seen something like it), and shared a one-time link with him. They cared more than I thought they would it seems
+The support team directed me to the head of their IT, where I gave him bug details in an encrypted textbox (it's the first time I've seen something like it), and shared a one-time link with him. They cared more than I thought they would it seems, and as I guessed, they just took down the CORS Anywhere service.
 
 ## Conclusion
 
