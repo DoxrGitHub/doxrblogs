@@ -1,6 +1,6 @@
 +++
 title = 'Forging School Safety Reports with Lightspeed Alert Agent'
-date = '2025-05-02T03:32:32Z'
+date = 2025-05-02T03:32:32Z
 draft = false
 +++
 

@@ -1,6 +1,6 @@
 +++
-title = 'Finding SSRF on Zonos' AWS container'
-date = '2025-04-29T03:00:12Z'
+title = 'Finding SSRF on a Zonos AWS container'
+date = 2025-04-29T03:00:12Z
 draft = false
 +++
 
