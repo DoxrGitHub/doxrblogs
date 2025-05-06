@@ -96,13 +96,13 @@ Until I realized it wasn't the true challenge, because I may have already solved
 
 This time, when I started LS Agent and opened devtools, there were no errors from Lightspeed's WASM anymore. This was it: I bypassed their anti-tamper, and the WASM assumed it was in a secure environment. When I went to Google and searched up a bad test term that triggered a report, it actually sent a report that wasn't denied by the server for not having an email (I use a Chromium build with no account associated with the profile I used for testing, so chrome.identity would just return nothing). When I decoded the JWT with https://jwt.io, the payload reflected my FAKE email, which proves that it worked.
 
-![pic of JWT](jwt.png)
+![pic of JWT](../../jwt.png)
 
 ## Making PoCs
 
 By now, I was pretty much good to go; I bypassed their integrity checks, ran my own scripts, and spoofed a target. However, I wasn't done yet. I felt like I could go one step farther: we can control aspects of a report right? So what if I made another HTML file that imports the spoofer and then Lightspeed's `index.js` (essentially starts a second background process, sort of), and then manually crafts a report with window.LSAlertWASM.SendReport to further spoof reports by allowing the user to generate details of the report, for a target? And that became part 2 of my PoC, to demonstrate just how easy could be, while staying completely client-side.
 
-![report generator](reportgen.png)
+![report generator](../../reportgen.png)
 
 Of course, I couldn't "test" this in the sense of checking if the administrators see a valid, normal report, by actually forging a request and sending it on a real person's name. I would've been doing too much and probably would've just gotten myself in actual trouble.
 
