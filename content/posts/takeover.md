@@ -8,6 +8,8 @@ draft = false
 
 This is my first time writing a public writeup for something I've found in the wild, but apparently I found it too late as someone reported it before I did. I still decided to make this today, because I found out that the vulnerability was patched a little while ago. This vulnerability I found a while back allowed complete compromise of all user accounts on Edulastic, including administrators.
 
+Edulastic/Pear Assessment is a testing and general work EdTech platform (owned by GoGuardian as part of the Peardeck Fleet), to easily make tests and take them (as a student). Key features include classroom management, 
+
 ## TL;DR
 
 The impersonation feature available to teachers, meant for teachers of a class to be able to impersonate their students, was able to impersonate anyone. All that was needed was a user ID- I also figured out how to convert an email to a user ID, allowing account takeover with just an email. Teacher accounts can be created extremely easily; they do not need to be verified whatsoever. There are no restrictions on what accounts can be taken over, meaning all users on the platform were completely vulnerable to having their account stolen.

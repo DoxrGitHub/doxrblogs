@@ -5,3 +5,8 @@ draft = false
 +++
 
 Testing
+
+```js
+const date = new Date().toISOString().split('.')[0] + 'Z';
+console.log(date);
+```
