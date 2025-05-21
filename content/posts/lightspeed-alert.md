@@ -115,6 +115,12 @@ I sent everything to Lightspeed, and at the end of it all, they said a couple th
 - "Please also note that testing against Lightspeed Systems assets without prior written consent is not authorized. This policy is in place to safeguard our infrastructure and our customers from unintended consequences." so no more Lightspeed testing
 - Since they "appreciate the professional and responsible way you handled this disclosure," they wanted to send Lightspeed Systems SWAG
 
+Edit: I got it:
+
+![report generator](../../swag.webp)
+
+All of it was pretty cool, especially the Rambler and Lightspeed-branded Tile tag.
+
 ## PoC files
 
 This is the main spoofer file, basically the main PoC:
