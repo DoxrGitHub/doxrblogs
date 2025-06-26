@@ -1,0 +1,6 @@
+/api/v1/users/identity
+
+/api/v1/rooms?per_page=10000
+
+/api/v2/rpc/notifications/create
+
