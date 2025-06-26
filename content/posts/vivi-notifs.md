@@ -4,7 +4,7 @@ date = 2025-05-31T00:50:52Z
 draft = false
 +++
 
-While this vulnerability is more funny than immediately dangerous, the potential abuse factor is still considerable, which is why I am posting htis. With this, someone could disrupt something or send inappropriate messages across a district, compromising the system, based on how much weight the messages carry (this varies school to school; in my school, nobody really cares).
+While this vulnerability is more funny than immediately dangerous, the potential abuse factor is still considerable, which is why I am posting this. With this, someone could disrupt something or send inappropriate messages across a district, compromising the system, based on how much weight the messages carry (this varies school to school; in my school, nobody really cares).
 
 ![message on my school projector](../../vivi-message.png)
 
