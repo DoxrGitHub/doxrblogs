@@ -1,7 +1,7 @@
 +++
 title = 'Blind SQL Injection Vulnerability in HRImaging'
 date = 2025-08-03T04:40:54Z
-draft = true
+draft = false
 +++
 
 # SQL Injection Vulnerability in HRImaging
