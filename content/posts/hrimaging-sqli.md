@@ -6,7 +6,7 @@ draft = false
 
 # SQL Injection Vulnerability in HRImaging
 
-I didn't do a lot of bug hunting this summer, but while I was on HRImaging for a project of mine, I found a vulnerability that let me inject SQL payloads into the promo code field. Since so much of what happened before I found the vulnerability pertains to my project (which should stay private), this blog post isn't that long. For context, HRImaging takes pictures for the yearbook and stuff, and they have a website where you can put in someone's name, ID, and school, and you will be able to order their pictures.
+I didn't do a lot of bug hunting this summer, but while I was on HRImaging for a project of mine, I found a vulnerability that let me inject SQL payloads into the promo code field. For context, HRImaging is a platform and service that takes school pictures, and they have a web interface to preview your images. Since so much of what happened before I found the vulnerability pertains to my project (which should stay private), this blog post isn't that long. For context, HRImaging takes pictures for the yearbook and stuff, and they have a website where you can put in someone's name, ID, and school, and you will be able to order their pictures.
 
 ## TL;DR:
 
