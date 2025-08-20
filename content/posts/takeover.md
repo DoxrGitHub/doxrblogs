@@ -14,6 +14,14 @@ Edulastic/Pear Assessment is a testing and general work EdTech platform (owned b
 
 The impersonation feature available to teachers, meant for teachers of a class to be able to impersonate their students, was able to impersonate anyone. All that was needed was a user ID- I also figured out how to convert an email to a user ID, allowing account takeover with just an email. Teacher accounts can be created extremely easily; they do not need to be verified whatsoever. There are no restrictions on what accounts can be taken over, meaning all users on the platform were completely vulnerable to having their account stolen.
 
+## Doxr's Severeness Rating:
+
+End Users affected: ~6-10 million users (students, teachers, admins) 
+
+Doxr's Rating: 9/10
+
+Why: Any user, including admins, could be impersonated, without any indication, if you're even slightly careful. Only needs a burner teacher account and a victim’s email or user ID. Creating teacher accounts is easy and unverified; easy to do for a skid.
+
 ## How This Began
 
 The requests that Edulastic/Pear Assessment makes are mostly vulnerable to IDOR (Insecure Direct Object Reference). Essentially, I can swap out identifying IDs in requests with other IDs, and in most cases, the server should return a 403 (forbidden) as this can lead to attackers being able to access more data than they should be able to. However, this simply wasn't the case for Edulastic, and its API is very reliant on IDs.

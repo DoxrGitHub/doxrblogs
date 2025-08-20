@@ -36,6 +36,14 @@ You can copy that comment ID and use it with the `sno-comment-verification/v1/co
 
 Unpatched as of 3/31/25 as I was unable to report this.
 
+## Doxr's Severeness Rating:
+
+End Users affected: I'd guess around 1000+ people, since I don't think SNOSites are very common, but then again, its a lot of users like students commenting on school news letters and such.
+
+Doxr's Rating: 4.5/10
+
+Why: Because someone could see commenters’ email addresses without permission, potentially putting their privacy at risk.
+
 ## Why Did I Start
 
 I realized that I kept giving up extremely easily when it came to pentesting, after the low-hanging fruit was already thought up of. That's why I decided that I needed to actually spend more time without giving up, and decided to go with SNOSites WordPress websites (which is affiliated with my school). I've never used WordPress myself, and I had been ignorant of WordPress based vulnerabilities, since I didn't really care about WordPress.

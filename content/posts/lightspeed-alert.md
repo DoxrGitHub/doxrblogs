@@ -41,6 +41,20 @@ We can use this function to hide that the original functions (fetch, getManifest
 
 Administrators will probably completely trust the malicious report that the WASM makes, as there usually isn't anything "off" with the report, and this is why the vulnerability is more important than what the PoC makes it look like: this level of trust in Lightspeed Alert Agent, which is also used to identify potential BOMB THREATS and SCHOOL SHOOTERS, as well as suicidal people and cyberbullies, can get someone innocent in tons of trouble and potentially looked at by the feds. Or, if they realize that they're getting spammed by forged reports, actual reports could also get ignored, and this sort of desensitization could lead to problems.
 
+## Doxr's Severeness Rating:
+
+This is my favorite vulnerability because (you'll see if you keep reading), and because of how dangerous this is.
+
+End Users affected: I asked ChatGPT to estimate:
+
+> As of 2024, Lightspeed Alert is actively protecting over 5.7 million students across more than 1,500 school districts in the United States. This is part of Lightspeed Systems' broader reach, which encompasses over 23 million students across more than 5,000 districts globally. 
+
+> These figures suggest that Lightspeed Alert is utilized in a significant portion of U.S. K–12 school districts. Given that there are approximately 13,000 public school districts in the U.S., this indicates that Lightspeed Alert is used in roughly 10–12% of districts. Considering the average district size and the widespread adoption of digital safety tools, it's reasonable to estimate that Lightspeed Alert serves a substantial number of students nationwide.
+
+Doxr's Rating: 9.5/10
+
+Why: The social implications are crazy, the potential for abuse is downright disgusting, and the trust in Lightspeed software would plummet.
+
 ## How it started
 
 Being able to spoof reports using Lightspeed Alert Agent has been a goal since I started cybersecurity, about a year or so ago, which was back when I finally got past being a total programming beginner; even then, I understood that Lightspeed Alert Agent's system was weak. To better understand why, here's an explanation of the LS Alert system:

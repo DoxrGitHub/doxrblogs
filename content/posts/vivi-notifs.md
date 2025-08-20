@@ -18,6 +18,14 @@ With a target district ID and room IDs for projectors, you can push a text notif
 
 Then, to get access to Vivi Central (where you can then run the actual notification-pusher script), sign up at the [IT Admins Trial](https://www.vivi.io/trial/) page; you can create a free, credit-cardless account that works for Vivi Central. Then, with the data gathered through the two prior PoC scripts, you can use the last PoC on https://admin.vivi.io to create the notifications event.
 
+## Doxr's Severeness Rating:
+
+End Users affected: Vivi is utilized in over 2,400 schools, encompassing approximately 160,000 classrooms and serving around 825,000 teachers and students worldwide. (Estimation by ChatGPT)
+
+Doxr's Rating: 6.5/10
+
+Why: Even though students and teachers in a district could theoretically see stupid messages, the messages themselves are just disruptive or annoying rather than directly harmful, in a lot of cases. There is no destruction of anything (not without some social engineering too).
+
 ## How it started
 
 In our school, there is a projector in the main commons room that creates a massive projection; for a while, I've wanted to do something to it, but I had never had the opportunity. It was too far up to do anything with the projector's sensors, even when I was directly under it. I couldn't get its IP or Mac Address, and it was actually pretty secure. In fact, I was pretty confused about how they turned the projector off at the end of the day; after this vulnerability, I assume they do it through Vivi Central.

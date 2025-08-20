@@ -14,6 +14,14 @@ They hosted a [CORS Anywhere](https://github.com/Rob--W/cors-anywhere) instance 
 
 From there, it was a matter of using `169.254.169.254` to find IAM roles and get their `AccessKeyId`, `SecretAccessKey`, `Token` for the role while being completely unauthenticated, and some more metadata about the EC2 instance. However, sending a request to `https://cors.zonos.com/http://localhost:80` confirmed that the container was sandboxed from Zonos.
 
+## Doxr's Severeness Rating:
+
+End Users affected: nobody, as far as I know.
+
+Doxr's Rating: 3/10
+
+Why: While this would've gave an attacker a peak into Zonos' internals, objectively speaking, it wouldn't have affected anyone anyways; however, if someone somehow took this one step farther, the rating could be a lot higher.
+
 ## How did I find this?
 
 Due to unforseeable circumstances, I needed a CORS proxy and I was unwilling to host my own. Public services are usually not optimal, but I knew that Google indexed a couple that I could use, if they were misconfigured to be usable by anyone for any domain (some were actually configured correctly, and blocked access from other domains that weren't theirs). For anyone wondering, I ended up using one that was semi-public; it wasn't shared, but it was indexed, and there was a custom message that made me believe it was for public usage (`https://fdcors-proxy.com/`, they have "`This cool stuff is brought to you by FordDirect IT Team :)`" on the site).

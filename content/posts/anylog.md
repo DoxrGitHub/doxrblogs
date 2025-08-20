@@ -14,6 +14,14 @@ While the service enforces strict checks on the Discord server ID that configura
 
 Also, there was a DOS vulnerability where the server errored when you tried to make premium configuration requests when you didn't own a server with premium; 5 or 10 of those could crash the Dyno (what Heroku calls their containers) for Tellter.
 
+## Doxr's Severeness Rating:
+
+End Users affected: [Easily over a million](https://doublecounter.gg/), 500k servers using DC with multiple people, probably.
+
+Doxr's Rating: 6.5/10
+
+Why: The DOS makes the dashboard/configuations impossible (backend service down) and distributed logging spam could be introduced, especially when botting is taken advantage of.
+
 ## Why I started
 
 I really like pentesting Discord Bots, specifically bots made for server management, because: 

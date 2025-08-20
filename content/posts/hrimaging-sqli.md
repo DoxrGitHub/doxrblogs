@@ -14,6 +14,14 @@ I found a blind SQLi in HRImaging's promo code input. By using a payload in this
 
 Also, there's a high possibility I could have ran destructive payloads on the production database, but I never tried it.
 
+## Doxr's Severeness Rating:
+
+End Users affected: One highschool (or at least, my high school, as of writing) is around ~2000 people; I'd estimate at least 20,000+ end users in total would be affected if databases were damaged.
+
+Doxr's Rating: 7.5/10
+
+Why: Because someone could potentially manipulate the database, access or break data, or run dangerous commands on the server and mess up HRImaging's systems.
+
 ## How did this happen?
 
 As I am somewhat unfamiliar with ASP.NET (as of writing), I was going through HRImaging's pages, and found interesting things like file paths (for both public files like pictures and server files like `C:\Data\Shop\20250729\Shop\Shop\EncyptionHelper.cs`, which are leaked either by elements in the website or specific errors that you can cause), but while I was in the order page, I saw that I could use a promo code.
