@@ -1,7 +1,7 @@
 +++
 title = 'Full Account Takeover Vulnerability - Edulastic'
 date = 2025-03-04T16:00:12Z
-draft = false
+draft = true
 +++
 
 # Full Account Takeover Vulnerability on Pear Assessment/Edulastic
