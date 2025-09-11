@@ -54,6 +54,8 @@ The funny thing is that I couldn't find a support email for general inquiries at
 
 Due to the lack of response to the issue and Vivi's lack of a responsible disclosure process, I'll just release this disclosure early. Please note that the attached PoCs have been redacted a little bit (just the API urls), so I'm not literally releasing zero-days, but the information stated here is enough to reproduce. 
 
+Edit: Some stuff is happening internally to patch this vulnerability. This vuln may get patched.
+
 ## PoC:
 
 In https://app.vivi.io, while authenticated into the target's district, run this script to grab the organization ID:
