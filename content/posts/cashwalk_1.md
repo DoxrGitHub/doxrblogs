@@ -1,10 +1,10 @@
 +++
-title = 'Botting Pay-To-Walk Apps - Reverse Engineering CashWalk'
+title = 'Botting a Pay-To-Walk App - Reverse Engineering CashWalk'
 date = 2025-09-26T03:27:53Z
 draft = true
 +++
 
-# Botting Pay-To-Walk Apps (Part 1) - Reverse Engineering CashWalk
+# Botting a Pay-To-Walk App (Part 1) - Reverse Engineering CashWalk
 
 As someone who primary does web-security and pen-test webapps, this was a completely new experience to me. While I'm somewhat familiar with the Android ecosystem, I've never actually attempted modding an app, or reverse engineering one either. For context, CashWalk is one of those apps that pay you through gift cards after a set amount of credits - you get credits through walking. While I'm not sure what the buisness model is apart from selling your location data (this is a guess), I know it works. This is because, a very long time, I actually used CashWalk, and after a long time of walking around, I got a gift card that actually worked. After all these years, my mind started thinking about it again. However, with my newfound CyberSecurity expertise, I had an instinct that it was possible to bot the system for giftcards while AFK. I have no clue if this was already done or what, but it was a crazy experience. I'm splitting this blog into two parts: one pre-MITM (which was a lot of trial and error), and post-MITM.
 

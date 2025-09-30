@@ -2,7 +2,7 @@ baseURL = "/doxrblogs/"
 theme = "hugo-blog-awesome"
 
 [params]
-    description = "Beautiful, exquisite writing by an intelligent adonis. (It's a compilation of public disclosures for vulnerabilities that I've found)."
+    description = "A security research blog, by an intelligent adonis."
     showDarkMode = true
     [params.author]
         name = "doxr"
@@ -27,17 +27,17 @@ theme = "hugo-blog-awesome"
 
 [Languages]
   [Languages.en]
-  title = "Doxr's Blog"
+  title = "Doxr's Security Research"
     languageCode = "en"
     defaultContentLanguage = "en"
 
     [Languages.en.params]
-      description = "Beautiful, exquisite writing by an intelligent adonis. (It's a compilation of public disclosures for vulnerabilities that I've found)."
+      description = "A security research blog, by an intelligent adonis."
       defaultColor = "dark"
       dateFormat = "2 Jan 2006"
       rssFeedDescription = "summary"
 
       [Languages.en.params.author]
-        intro = "Doxr's Blog"
+        intro = "Doxr's Security Research"
         name = "doxr"
-        description = "Beautiful, exquisite writing by an intelligent adonis. (It's a compilation of public disclosures for vulnerabilities that I've found)."
+        description = "A security research blog, by an intelligent adonis."
