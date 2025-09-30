@@ -74,7 +74,7 @@ It seems that stepcoins are dependent on your steps that the server knows of. It
 
 However, this STILL didn't work, and the server kept rejecting my responses. So I looked closer at the authentication request past Facebook OAuth, and I found that the uniqueKey wasn't actually random; it was consistent, so when I hardcoded the uniqueKey that the app generated, it worked perfectly. 
 
-When I made a facebook alt and reused my device ID, that worked too, so I assume that there's some sort of algorithmic check on uniqueKey...? I'm not fully sure about the role of uniqueKey.
+When I made a facebook alt and reused my device ID, that worked too, so I assume that there's some sort of algorithmic check on uniqueKey...? I'm not fully sure about the role of uniqueKey. But what I do know is that it's an Android Device ID; that's about it.
 
 ## Reporting
 
