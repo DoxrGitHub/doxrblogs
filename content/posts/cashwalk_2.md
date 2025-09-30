@@ -548,6 +548,50 @@ main();
 
 Getting the environment fully set up to start botting is left as an exercise for the reader (this is a joke don't try to use this PoC to bot CashWalk).
 
+startAVD.sh:
+```bash
+#!/bin/bash
+
+# --- Configuration ---
+AVD_NAME="cashwalk"
+MEMORY="8096"
+PROXY="http://127.0.0.1:8080"
+CERT_FILE="c8750f0d.0" # Make sure this file is in the same directory as the script
+
+# --- Script Start ---
+echo "✅ Starting the All-in-One AVD Prep Script..."
+
+# Step 1: Launch the emulator in the background in writable mode
+echo "⏳ Launching AVD '$AVD_NAME' in writable mode..."
+emulator -avd "$AVD_NAME" -writable-system -no-snapshot-load -memory "$MEMORY" -http-proxy "$PROXY" &
+
+# Step 2: Wait for the device to be fully booted
+echo "⏳ Waiting for emulator to boot completely..."
+adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done;'
+echo "✅ Emulator is booted."
+
+# Step 3: Prepare the certificate
+echo "🔧 Preparing the certificate for installation..."
+echo "✅ Certificate renamed to $CERT_FILE"
+
+# Step 4: Install the certificate
+echo "⏳ Installing certificate as a system trusted CA..."
+adb root
+adb remount
+adb push "$CERT_FILE" /system/etc/security/cacerts/
+adb shell "chmod 644 /system/etc/security/cacerts/$CERT_FILE && reboot"
+echo "✅ Certificate pushed and permissions set. Rebooting emulator..."
+
+# Step 5: Clean up the temporary cert file
+rm "$CERT_FILE"
+
+echo "🎉 --- SETUP COMPLETE --- 🎉"
+echo "The emulator has rebooted with the system certificate installed."
+echo "You can now launch it normally for your analysis."
+```
+
+While it assumes a lot of things about the system, (like the hashed cert file and the existence of an AVD called cashwalk), this script is useful for setting up a pentesting AVD yourself. A cool project idea would be to automate something like this (think [Genymotion](https://www.genymotion.com/) but with spoofers built in and anti-detection directly in the system, with hidden su access for pentesting convienience).
+
 ## Consequences/Losses
 
 There might be someone wondering why I didn't just try to make money with this. With 11 alts (sounds ridiculous at first, but it's actually not that bad), where each one started botting every day for ~275 points (this is how many points you usually get with the PoC), knowing that 3000 points is a 5 dollar giftcard, you could set up a system where every day you make an alt and after making 11 alts, based on the math you are very likely to make 5 dollars a day through gift cards, and moreover, if you keep making alts (say, 22 alts), you can bump that up to 10 dollars a day. Sure, it would need a lot of residental proxies for botting and a reliable residential VPN on a phone, but 5 dollars a day doing nothing at all but running a script is pretty good. 
@@ -563,5 +607,7 @@ As this is my first time doing reverse engineering with an app, this experience 
 My patch would be to use the Play Integrity API more generously across the app, and verify with the server. Right now, it depends heavily on "simple" checks that leave the app suseptible to easier pentesting, and the server simply doesn't enforce the client's authenticity. If there is a required nonce from the PIA during user authentication and requests for steps/points/luckyboxes, the platform becomes a lot more secure. That's just me, though.
 
 Also, I noticed that I included a lot more specific details and methodologies than usual, but that's because I want to be able to highlight the specific process for both me in the future and other people who want to approach pentesting Android apps without prior experience.
+
+And finally, I want to say again that I did (and learned about) sooooo much random stuff regarding reverse-engineering this app that I simply couldn't talk about everything in these two parts.
 
 - doxr
