@@ -1,12 +1,12 @@
 +++
-title = 'Botting a Pay-To-Walk App - Reverse Engineering CashWalk'
+title = 'Reverse Engineering a Pay-To-Walk App (Part 2) - CashWalk'
 date = 2025-09-30T02:35:51Z
-draft = true
+draft = false
 +++
 
-# Botting a Pay-To-Walk App (Part 2) - Reverse Engineering CashWalk
+# Reverse Engineering a Pay-To-Walk App (Part 2) - CashWalk
 
-If you didn't come from part 1 (where I successfully set up a MITM environment with CashWalk and mod the APK to disable its anti-root anti-emulator protections; this let me pentest way easier and way faster with my AVD), CashWalk pays you to walk in gift cards. Last blog/writeup, I set up an MITM environment, and I'll attach my script that automatically pushed the MITM cert to the rooted AVD so I could start it with mitmweb easily below.
+If you didn't come from part 1 (where I successfully set up a MITM environment with CashWalk and mod the APK to disable its anti-root anti-emulator protections; this let me pentest way easier and way faster with my AVD), CashWalk is a platform that pays you to walk in gift cards. Last blog/writeup, I set up an MITM environment, and I'll attach my script that automatically pushed the MITM cert to the rooted AVD so I could start it with mitmweb easily below.
 
 In this part, I do skip over a lot of good-to-know info for a public disclosure, because unlike web-pentesting where I'm familiar with everything I do (therefore, I can write about it at a deeper level), there are so many new moving parts that I know exist but can't write about, so I just don't.
 
@@ -78,7 +78,13 @@ When I made a facebook alt and reused my device ID, that worked too, so I assume
 
 ## Reporting
 
-[XYZ to do]
+After looking around, I saw that there was no security email, once again. So, I sent them an email to their support email, and I actually got an automated email back, making me think that my issue might get escalated to the right people.
+
+![automated mail](../../automail.png)
+
+However, I, once again, got ignored. Seeing as how `cashwalklabs.io` is English but `cashwalk.com` is Korean (I'm pretty sure the company is based in Korea), it might've been a language barrier or something. I'm releasing this blog without the patch (I know that the rest of the blog assumes the app is already patched, but it was written prior to me getting ghosted by the support team). Please do not attack CashWalk, as the point of this blog is to inform others about reverse engineering an app, not to leak an exploit or something like that.
+
+![crazy ghosting](../../ghostedwalk.png)
 
 ## PoC and Related Files
 
@@ -231,7 +237,7 @@ const AUTH_PAYLOAD = {
   timezone: -360,
   "token": null, // This will be populated by the Facebook OAuth flow
   type: 'fb',
-  "uniqueKey": "8f154d7e25d9cd3d",
+  "uniqueKey": "[redacted]", // I redacted my uniqueKey
   useDayLightType: 1
 };
 const DEFAULT_FB_APP_ID = '3063132263700744';
