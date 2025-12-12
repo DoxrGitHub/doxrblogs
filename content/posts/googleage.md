@@ -93,8 +93,6 @@ After that, Elon Musk finally started working, and the WASM returned a hex.
 
 For more context, the WASM also takes a session ID and a public key. The session ID can be grabbed easily after you start the age estimation process from Google, and we can get the public key ourselves by fetching it. Now, with everything in place, the PoC could validate any session with the face request. I recreated the face request with the session ID and WASM response, and the server actually accepted it just fine. When I refreshed on the age verification page, it recognized the session succeeded and redirected me to Google, where I was declared an adult.
 
-![verified account](../../verified.png)
-
 I ran into an issue here, though. I already used up almost of my minor accounts during testing, and the account that I used the PoC to verify was my last minor account. I had to be careful not to verify my last one until the one-click thing was done.
 
 ### WASM Procedure
