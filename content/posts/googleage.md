@@ -81,7 +81,7 @@ Initially, Elon Musk kept going against the configuration, and the WASM would re
   "mf_token": "",
   "mf_reset_threshold": 0,
   "mf_antispoof_on_last_frame": false,
-  "disallowed_results": [6,7,8,9,11,12,13,14,15,16,17,18,22,23,24]
+  "disallowed_results": [6,8,9,11,12,13,14,15,16,17,18,22,23,24]
 }
 ```
 
@@ -124,6 +124,10 @@ I went with two, ported the website to a Chrome extension and messed with the co
 This happened with minimal errors, and I was actually able to make the PoC. There are of course some problems that I couldn't fix; for example, the PoC would verify the "primary" Google account, which is the one you logged into first in the browser session. To change the primary, I'm pretty sure you need to mess with some Google things or sign out all of them. I also didn't know why it started returning status 7 which was disallowed, but it doesn't matter because the server accepted it regardless.
 
 Since I couldn't record a video of this PoC working because I ended up verifying the last minor account I had, I'm posting the entire Chrome extension to [this GitHub repo](https://github.com/doxrgithub/agebypasspoc), in case you want to read the source code (look at `dashboard.js`, it has the majority of the logic), or try it out. I can't confirm that it's not patched at the time of posting, or if the WASM's output stops being accepted by the server or some other issue that might come up.
+
+## PoC
+
+In case you missed the link, you can find the full PoC source code at [GitHub](https://github.com/doxrgithub/agebypasspoc).
 
 ## Reporting
 
