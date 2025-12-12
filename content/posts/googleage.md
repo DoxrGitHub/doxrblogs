@@ -6,7 +6,7 @@ draft = false
 
 # Age Verification Bypass - Google/PrivateID
 
-Several of my accounts were randomly declared as minor accounts with Google's [AI age estimation](https://blog.google/technology/safety-security/age-assurance-measures-safer-online-kids-teens-us/), which is somewhat controversial and followed the UK Online Safety Act (an act that essentially tries to force people to strip their anonymity online under the pretense of child safety); one of the ways to verify I was over 18 was to use all features of Google. I currently had Google AI Pro, so it sucked that I was barred from using features like Anonymous chat or Veo on Gemini, but when I was blocked from using Google Antigravity, I gave up and decided to verify.
+Several of my accounts were randomly declared as minor accounts with Google's [AI age estimation](https://blog.google/technology/safety-security/age-assurance-measures-safer-online-kids-teens-us/), which is somewhat controversial and followed the UK Online Safety Act; one of the ways to verify I was over 18 was to use all features of Google. I currently had Google AI Pro, so it sucked that I was barred from using features like Anonymous chat or Veo on Gemini, but when I was blocked from using Google Antigravity, I gave up and decided to verify.
 
 The safest option seemed to be to use AI to verify if I was over 18 using my phone camera, and eventually, it said I was 18. However, with some research, I discovered some interesting things.
 
@@ -14,7 +14,7 @@ The safest option seemed to be to use AI to verify if I was over 18 using my pho
 
 Doxr's Rating: 6/10
 
-Why: It's cool (and pretty useful for those who don't want to expose their biometrics online), but doesn't effect anyone.
+Why: It's cool (and pretty useful for those who don't want to expose their biometrics online), but doesn't harm anyone.
 
 ## TL;DR:
 
@@ -38,7 +38,7 @@ Firstly, I got the related WASM (website uses the SIMD variant) and downloaded i
 
 Then, I had to create a bit of a set up. I created a new browser profile with the Burp Suite proxy + CA, went on my minor account, started the process. First, I had to use Burp Suite to intercept the request that forces you to switch to mobile mode and change the response, then I used Chrome Devtools for A. the WASM logs which leaked a lot of valuable information like what config was being used, ect and B. to pretend the browser was offline, so that, once I verified my face, it wouldn't be sent to Google- otherwise, I would have that account be verified, and I would have to move on to my limited minor accounts. I couldn't actually start an age verification session through [this link](https://myaccount.google.com/age-verification/selfie/privateid/init?hl=en&utm_source=OGB&utm_medium=act) without my account being explicitly marked as a minor account. 
 
-From there, I captured my logs and got Gemini on it. It recognized the issue and knew what we had to do, but actually creating a working PoC was a bit of a process (as expected). Before starting the one-button project, I decided to test the WASM normally. Gemini created a website, set up the WASM, and it was essentially participating in a feedback loop: it modifies the PoC, I capture errors, related details, and I tell it what might be going on; then, it keeps modifying the PoC. After Gemini got the WASM working on the website, I tried passing my own picture to the WASM. After a lot of debugging, I realized that my face wasn't working because I was trying to send a regular 1080*720 picture instead of a 300x300 (square) picture like the WASM wanted, so eventually, I decided to steal Elon Musk's picture and pass it to the WASM to run its age estimations on:
+From there, I captured my logs and got Gemini on it. It recognized the issue and knew what we had to do, but actually creating a working PoC was a bit of a process (as expected). Before starting the one-button project, I decided to test the WASM normally. Gemini created a website, set up the WASM, and it was essentially participating in a feedback loop: it modifies the PoC, I capture errors, related details, and I tell it what might be going on; then, it keeps modifying the PoC. After Gemini got the WASM working on the website, I tried passing my own picture to the WASM. After a lot of debugging, I realized that my face wasn't working because I was trying to send a regular 1080*720 picture instead of a 300x300 (square) picture like the WASM wanted, so eventually, I decided to take Elon Musk's picture off Google and pass it to the WASM to run its age estimations on:
 
 <img src="https://futureoflife.org/wp-content/uploads/2020/08/elon_musk_royal_society.jpg" height="300" width="300">
 
@@ -133,8 +133,12 @@ In case you missed the link, you can find the full PoC source code at [GitHub](h
 
 Normally, I report vulnerabilities I find, but in this case, I feel like reporting this issue would be totally useless for both companies.
 
+> Patented Edge AI works on-device to never transmit or save an image. No personal identifiable information (PII) ever leaves the users personal device. Does not incure privacy law obligations including GDPR, CCPA, BIPA. Reduced legal risk for businesses and greater privacy for the user. No user or parental consent required! ([Facial Age Verification](https://privateid.com/age-verification/))
+
 - PrivateID created client-side verification knowing the risks; this wasn't a case of them accidentally making bad software. It was completely intentional, and they probably already knew that someone *could* figure out how to bypass everything. It was just me who spent the time making it all work.
 
 - Google explicitly chose PrivateID meaning they put "client side estimation" over "secure estimation;" the bug is a natural consequence of that choice, so I doubt they'd do anything about my report (it's also out-of-scope for VRP)
 
-It's pretty cool that I could make a one-click solution, though.
+Given all of that, the most reasonable conclusion is that this falls under WAI (Working As Intended) rather than a fixable flaw. The system behaves exactly the way a fully client-side, privacy-preserving age check should realistically behave: it trusts whatever the client produces. There is no real way for either Google or PrivateID to enforce integrity without fundamentally redesigning the product (getting rid of configs and such) or abandoning the "no images leave the device" promise. Because of that, sending a formal report would waste both my time and theirs. So, I'mm documenting it here so that others can understand the architecture, its limitations, and why client-side age assurance should never be treated as a security boundary. In theory, they could do something like adding integrity checks on the environment, try obfuscating the interaction between WASM and JavaScript, or rotate the key generation algorithm every once in a while. They're all weak fixes that would just take another couple days to bypass as long as they don't move it to the server (they won't).
+
+This write-up isn’t meant to pressure either company to "fix" anything; it's just an explanation of how the system works, why the bypass is possible, and how I made it one single click (which is pretty cool IMO).
