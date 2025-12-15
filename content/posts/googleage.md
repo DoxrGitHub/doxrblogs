@@ -6,7 +6,7 @@ draft = false
 
 # Age Verification Bypass - Google/PrivateID
 
-Several of my accounts were randomly declared as minor accounts with Google's [AI age estimation](https://blog.google/technology/safety-security/age-assurance-measures-safer-online-kids-teens-us/), which is somewhat controversial and followed the UK Online Safety Act; one of the ways to verify I was over 18 was to use all features of Google. I currently had Google AI Pro, so it sucked that I was barred from using features like Anonymous chat or Veo on Gemini, but when I was blocked from using Google Antigravity, I gave up and decided to verify.
+Several of my accounts were randomly declared as minor accounts with Google's [AI age estimation](https://blog.google/technology/safety-security/age-assurance-measures-safer-online-kids-teens-us/), which is somewhat controversial and followed the UK Online Safety Act; one of the ways to verify I was over 18 was to use AI age estimation with your selfie. If you didn't want to verify, you would lose several features of your account. I currently had Google AI Pro, so it sucked that I was barred from using features like Temporary Chat or Nano Banana Pro/Veo on Gemini, and when I was blocked from using Google Antigravity, I gave up avoiding verification and decided.
 
 The safest option seemed to be to use AI to verify if I was over 18 using my phone camera, and eventually, it said I was 18. However, with some research, I discovered some interesting things.
 
